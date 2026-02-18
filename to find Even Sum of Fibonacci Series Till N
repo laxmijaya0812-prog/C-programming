@@ -1,0 +1,17 @@
+#include <stdio.h>
+void main() {
+int N;
+printf("Enter the value of N: ");
+scanf("%d", &N);
+int a = 0, b = 1, next = 0;
+int evenSum = 0;
+while (a <= N) {
+if (a % 2 == 0) {
+evenSum += a;
+}
+next = a + b;
+a = b;
+b = next;
+}
+printf("Sum of even Fibonacci numbers till %d is: %d\n", N, evenSum);
+}
