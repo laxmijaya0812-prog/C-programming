@@ -1,0 +1,27 @@
+#include &lt;stdio.h&gt;
+
+int main() {
+int number, i, flag = 0;
+int *ptr = &amp;number; // Pointer to the number
+
+printf(&quot;Enter a number: &quot;);
+scanf(&quot;%d&quot;, &amp;number);
+
+if (*ptr &lt;= 1) {
+flag = 1;
+} else {
+for (i = 2; i &lt;= (*ptr) / 2; i++) {
+if (*ptr % i == 0) {
+flag = 1;
+break;
+}
+}
+}
+
+if (flag == 0)
+printf(&quot;%d is a Prime number.\n&quot;, *ptr);
+else
+printf(&quot;%d is not a Prime number.\n&quot;, *ptr);
+
+return 0;
+}
