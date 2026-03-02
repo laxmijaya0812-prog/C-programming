@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+int arr[100], n, diff, count = 0;
+printf("Enter number of elements: ");
+scanf("%d", &n);
+printf("Enter %d elements:\n", n);
+for(int i = 0; i < n; i++) {
+scanf("%d", &arr[i]); }
+printf("Enter the difference value: ");
+scanf("%d", &diff);
+for(int i = 0; i < n; i++) {
+for(int j = i + 1; j < n; j++) {
+if(arr[i] - arr[j] == diff || arr[j] - arr[i] == diff) {
+count++;
+}
+}
+}
+printf("\nTotal pairs with difference %d = %d\n", diff, count);
+return 0;
+}
