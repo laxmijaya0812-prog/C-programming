@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char sentence[200], words[50][20];
+    int freq[50] = {0};
+    int i = 0, j, k = 0, count = 0, max = 0, index = 0;
+    printf("Enter a sentence:\n");
+    fgets(sentence, sizeof(sentence), stdin);
+    char *token = strtok(sentence, " \n");
+    while (token != NULL)
+    {
+        strcpy(words[k], token);
+        k++;
+        token = strtok(NULL, " \n");
+    }
+
+    // Count frequency of each word
+    for (i = 0; i < k; i++)
+    {
+        count = 1;
+        if (freq[i] == 0)
+        {
+            for (j = i + 1; j < k; j++)
+            {
+                if (strcmp(words[i], words[j]) == 0)
+                {
+                    count++;
+                    freq[j] = -1; // mark as counted
+                }
+            }
+            freq[i] = count;
+        }
+    }
+    for (i = 0; i < k; i++)
+    {
+        if (freq[i] > max)
+        {
+            max = freq[i];
+            index = i;
+        }
+    }
+    printf("Most frequent word: %s\n", words[index]);
+    printf("Frequency: %d\n", max);
+
+    return 0;
+}
