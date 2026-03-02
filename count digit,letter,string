@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+    char str[200];
+    int i = 0, digits = 0, letters = 0, spaces = 0;
+
+    printf("Enter a string:\n");
+    fgets(str, sizeof(str), stdin);
+
+    while (str[i] != '\0')
+    {
+        if (str[i] >= '0' && str[i] <= '9')
+            digits++;
+        else if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
+            letters++;
+        else if (str[i] == ' ')
+            spaces++;
+
+        i++;
+    }
+
+    printf("Digits = %d\n", digits);
+    printf("Letters = %d\n", letters);
+    printf("Spaces = %d\n", spaces);
+
+    return 0;
+}
