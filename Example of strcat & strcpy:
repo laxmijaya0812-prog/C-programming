@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+char s1[50] = "KANMANI";
+char s2[50] = " LAKSHMI DEVI";
+strcat(s1,s2);
+printf("Output string after concatenation: %s\n", s1);
+strcpy(s1,s2);
+printf("Output string after String Copy: %s", s1);
+return 0;
+}
