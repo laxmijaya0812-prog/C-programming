@@ -1,0 +1,14 @@
+#include <stdio.h>
+struct Employee {
+char name[50];
+int empID;
+float salary;
+};
+int main() {
+struct Employee emp = {"John Doe", 101, 55000.75};
+printf("Employee Details:\n");
+printf("Name : %s\n", emp.name);
+printf("Emp ID : %d\n", emp.empID);
+printf("Salary : %.2f\n", emp.salary);
+return 0;
+}
