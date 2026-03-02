@@ -1,0 +1,25 @@
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+char* reverseString(char str[]) {
+static int i = 0;
+static char rev[100];
+int len = strlen(str);
+
+if (*str) {
+reverseString(str + 1);
+rev[i++] = *str;
+}
+rev[len] = &#39;\0&#39;;
+return rev;
+}
+
+int main() {
+char str[100];
+
+printf(&quot;Enter a string: &quot;);
+scanf(&quot;%s&quot;, str);
+
+printf(&quot;Reversed string: %s\n&quot;, reverseString(str));
+
+return 0;
+}
