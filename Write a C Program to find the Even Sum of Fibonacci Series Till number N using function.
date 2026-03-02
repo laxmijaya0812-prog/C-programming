@@ -1,0 +1,36 @@
+#include &lt;stdio.h&gt;
+
+int evenFiboSum(int n)
+
+{
+int a = 0, b = 1, c;
+int sum = 0;
+
+while(a &lt;= n)
+{
+if(a % 2 == 0)
+{
+sum = sum + a;
+}
+
+c = a + b;
+a = b;
+b = c;
+}
+
+return sum;
+}
+
+int main()
+{
+int n, result;
+
+printf(&quot;Enter the value of N: &quot;);
+scanf(&quot;%d&quot;, &amp;n);
+
+result = evenFiboSum(n);
+
+printf(&quot;Sum of even Fibonacci numbers up to %d is %d\n&quot;, n, result);
+
+return 0;
+}
