@@ -1,0 +1,24 @@
+#include &lt;stdio.h&gt;
+int checkEqual(int a, int b)
+{
+if(a == b)
+return 1;
+else
+return 0;
+}
+
+int main()
+{
+int num1, num2, result;
+printf(&quot;Enter first number: &quot;);
+scanf(&quot;%d&quot;, &amp;num1);
+printf(&quot;Enter second number: &quot;);
+scanf(&quot;%d&quot;, &amp;num2)
+result = checkEqual(num1, num2);
+if(result == 1)
+printf(&quot;Both numbers are equal.\n&quot;);
+else
+printf(&quot;Both numbers are not equal.\n&quot;);
+
+return 0;
+}
