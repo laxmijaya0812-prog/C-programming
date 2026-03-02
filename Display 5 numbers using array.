@@ -1,0 +1,11 @@
+#include<stdio.h>
+void main() {
+int arr[] = {51,32,43,24,5,26};
+int i;
+for(i=0; i<=5; i++) {
+printf("%d
+\
+n",arr[i]);
+
+}
+}
