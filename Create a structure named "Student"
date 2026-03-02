@@ -1,0 +1,17 @@
+#include <stdio.h>
+struct Student {
+char name[50];
+int rollNo;
+float m1,m2,m3;
+};
+int main() {
+struct Student s={"Aswin",1925,89,90,95};
+float total, average;
+total = s.m1+s.m2+s.m3;
+average = total / 3.0;
+printf("\n--- Student Details ---\n");
+printf("Name : %s\n", s.name);
+printf("Roll No : %d\n", s.rollNo);
+printf("Average : %.2f\n", average);
+return 0;
+}
