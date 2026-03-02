@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+char str[50] = "SANJEETH";
+int i, j, count;
+for (i = 0; str[i] != '\0'; i++) {
+count = 1;
+for (j = i + 1; str[j] != '\0'; j++) {
+if (str[i] == str[j]) {
+count++;
+}
+}
+printf("%c = %d\n", str[i], count);
+}
+return 0;
+}
