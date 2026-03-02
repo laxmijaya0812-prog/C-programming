@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char dna[200], pattern[50];
+    int i, j, flag, found = 0;
+
+    printf("Enter DNA sequence: ");
+    scanf("%s", dna);
+
+    printf("Enter DNA pattern: ");
+    scanf("%s", pattern);
+
+    int len1 = strlen(dna);
+    int len2 = strlen(pattern);
+
+    
+    for (i = 0; i <= len1 - len2; i++)
+    {
+        flag = 1;
+
+        for (j = 0; j < len2; j++)
+        {
+            if (dna[i + j] != pattern[j])
+            {
+                flag = 0;
+                break;
+            }
+        }
+
+        if (flag == 1)
+        {
+            printf("Pattern found at position %d\n", i + 1);
+            found = 1;
+        }
+    }
+
+    if (!found)
+        printf("Pattern not found");
+
+    return 0;
+}
