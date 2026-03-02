@@ -1,0 +1,21 @@
+#include &lt;stdio.h&gt;
+int table(int m, int n)
+{
+int i;
+for(i = 1; i &lt;= n; i++)
+{
+printf(&quot;%d x %d = %d\n&quot;, m, i, m * i);
+}
+return 0;
+}
+int main()
+{
+int m, n;
+printf(&quot;Enter the number (m): &quot;);
+scanf(&quot;%d&quot;, &amp;m);
+printf(&quot;Enter the limit (n): &quot;);
+scanf(&quot;%d&quot;, &amp;n);
+
+table(m, n);
+return 0;
+}
