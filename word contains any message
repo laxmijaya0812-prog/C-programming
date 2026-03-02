@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char message[200];
+    char banned[10][20];
+    int n, i, found = 0;
+
+    printf("Enter the message: ");
+    getchar(); // to clear buffer
+    fgets(message, sizeof(message), stdin);
+
+    printf("Enter number of banned words: ");
+    scanf("%d", &n);
+
+    printf("Enter banned words:\n");
+    for (i = 0; i < n; i++)
+    {
+        scanf("%s", banned[i]);
+    }
+
+    printf("\nBanned words found in the message:\n");
+
+    for (i = 0; i < n; i++)
+    {
+        if (strstr(message, banned[i]) != NULL)
+        {
+            printf("%s\n", banned[i]);
+            found = 1;
+        }
+    }
+
+    if (!found)
+        printf("No banned words found.");
+
+    return 0;
+}
