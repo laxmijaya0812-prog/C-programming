@@ -1,0 +1,18 @@
+#include <stdio.h>
+float findAverage(float arr[]);
+int main() {
+float avg;
+float arr[5]={2,3,4,5,6};
+avg = findAverage(arr);
+printf("Average of array elements = %.2f\n", avg);
+return 0;
+}
+float findAverage(float arr[]) {
+int i, sum = 0;
+float average;
+for (i = 0; i < 5; i++) {
+sum += arr[i];
+}
+average=sum/5.0;
+return average;
+}
