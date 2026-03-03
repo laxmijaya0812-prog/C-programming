@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100], freq[100];
+    int n, i, j, count;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    // Input elements
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        freq[i] = -1;   // mark all as uncounted
+    }
+
+    // Frequency calculation
+    for(i = 0; i < n; i++) {
+        count = 1;
+        if(freq[i] == -1) {
+            for(j = i + 1; j < n; j++) {
+                if(arr[i] == arr[j]) {
+                    count++;
+                    freq[j] = 0;  // mark counted
+                }
+            }
+            freq[i] = count;
+        }
+    }
+
+    // Display result
+    printf("\nElement   Frequency\n");
+    for(i = 0; i < n; i++) {
+        if(freq[i] != 0) {
+            printf("%d\t%d\n", arr[i], freq[i]);
+        }
+    }
+
+    return 0;
+}
