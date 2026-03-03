@@ -1,0 +1,16 @@
+#include <stdio.h>
+float area(int r); 
+int main(){
+int r;
+float a;
+scanf("%d”,&r);
+a = area(r); 
+printf("area = %.2f",a);
+return 0;
+}
+float area(int r) 
+{
+float result;
+result = 3.14*r*r;
+return result; 
+}
