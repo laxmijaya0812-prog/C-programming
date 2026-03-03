@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100], sub[50];
+    int i, j, count = 0;
+
+    printf("Enter the main string: ");
+    gets(str);
+
+    printf("Enter the substring: ");
+    gets(sub);
+
+    int len1 = strlen(str);
+    int len2 = strlen(sub);
+
+    for(i = 0; i <= len1 - len2; i++) {
+        for(j = 0; j < len2; j++) {
+            if(str[i + j] != sub[j])
+                break;
+        }
+        if(j == len2)
+            count++;
+    }
+
+    printf("Substring occurs %d times", count);
+
+    return 0;
+}
