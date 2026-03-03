@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    float a, b, c, d, det;
+
+    printf("Enter 4 elements:\n");
+    scanf("%f %f %f %f", &a, &b, &c, &d);
+
+    det = (a * d) - (b * c);
+
+    if(det == 0)
+        printf("Inverse not possible");
+    else {
+        printf("Inverse matrix:\n");
+        printf("%.2f %.2f\n", d/det, -b/det);
+        printf("%.2f %.2f", -c/det, a/det);
+    }
+
+    return 0;
+}
