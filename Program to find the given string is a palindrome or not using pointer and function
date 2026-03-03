@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+int isPalindrome(char *str);
+int main()
+{
+char str[100];
+scanf("%s", str);
+if (isPalindrome(str))
+printf("%s is a Palindrome.",str);
+else
+printf("%s is NOT a Palindrome.",str);
+return 0;
+}
+int isPalindrome(char *str)
+{
+char *start = str;
+char *end = str + strlen(str) - 1;
+while (start < end)
+{
+if (*start != *end)
+{
+return 0;
+
+17
+
+}
+start++;
+end--;
+}
+return 1;
+}
