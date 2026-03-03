@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+float num, root,p;
+printf("Enter a number: ");
+scanf("%f", &num);
+root = sqrt(num);
+p=pow (2,3);
+printf("%.2f”, root);
+printf(“%.2f”, p);
+return 0;
+}
