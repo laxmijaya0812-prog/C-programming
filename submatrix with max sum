@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <limits.h>
+
+int main() {
+    int r, c, i, j, k, l;
+    int a[10][10];
+    int maxSum = INT_MIN;
+
+    printf("Enter rows and columns: ");
+    scanf("%d %d", &r, &c);
+
+    printf("Enter matrix elements:\n");
+    for(i = 0; i < r; i++)
+        for(j = 0; j < c; j++)
+            scanf("%d", &a[i][j]);
+
+    for(i = 0; i < r; i++) {
+        for(j = 0; j < c; j++) {
+            for(k = i; k < r; k++) {
+                for(l = j; l < c; l++) {
+                    int sum = 0;
+                    for(int x = i; x <= k; x++)
+                        for(int y = j; y <= l; y++)
+                            sum += a[x][y];
+
+                    if(sum > maxSum)
+                        maxSum = sum;
+                }
+            }
+        }
+    }
+
+    printf("Maximum Submatrix Sum = %d", maxSum);
+
+    return 0;
+}
