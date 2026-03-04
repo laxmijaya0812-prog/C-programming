@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX 100
+
+struct Student {
+    char name[50];
+    int rollNo;
+    float marks;
+    char grade;
+};
+
+int main() {
+
+    struct Student s[MAX];
+    int count = 0;
+    int choice;
+    int i;
+
+    do {
+        printf("\n===== Student Management System =====\n");
+        printf("1. Add Student\n");
+        printf("2. Display Students\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch(choice) {
+
+            case 1:
+                //printf("Enter Name: ");
+                scanf(" %s", s[count].name);
+
+                //printf("Enter Roll No: ");
+                scanf("%d", &s[count].rollNo);
+
+                //printf("Enter Marks: ");
+                scanf("%f", &s[count].marks);
+
+                // Grade Calculation
+                if (s[count].marks >= 90)
+                    s[count].grade = 'A';
+                else if (s[count].marks >= 75)
+                    s[count].grade = 'B';
+                else if (s[count].marks >= 60)
+                    s[count].grade = 'C';
+                else if (s[count].marks >= 50)
+                    s[count].grade = 'D';
+                else
+                    s[count].grade = 'F';
+
+                count++;
+                printf("Student added successfully!\n");
+                break;
+
+            case 2:
+                    printf("\n--- Student Records ---\n");
+                    for (i = 0; i < count; i++) {
+                        printf("\nStudent %d\n", i + 1);
+                        printf("Name    : %s\n", s[i].name);
+                        printf("Roll No : %d\n", s[i].rollNo);
+                        printf("Marks   : %.2f\n", s[i].marks);
+                        printf("Grade   : %c\n", s[i].grade);
+                    }              
+                    break;
+
+            case 3:
+                printf("Exiting Program...\n");
+                break;
+
+            default:
+                printf("Invalid choice! Try again.\n");
+        }
+
+    } while (choice != 3);
+
+    return 0;
+}
